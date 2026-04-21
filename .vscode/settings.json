@@ -1,0 +1,11 @@
+{
+  // 终端配置
+  "terminal.integrated.profiles.windows": {
+    "GitBash": {
+        "path": "C:\\Work\\dev\\PortableGit\\bin\\bash.exe",
+        "icon": "terminal-bash",
+        "overrideName": true
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "GitBash"
+}
