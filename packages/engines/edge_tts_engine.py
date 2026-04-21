@@ -60,6 +60,13 @@ class EdgeTTSEngine(TTSEngineBase):
                     audio_chunks.append(chunk["data"])
 
             audio_data = b"".join(audio_chunks)
+            
+            # Check if we received any audio data
+            if not audio_data:
+                error_msg = "No audio was received. Please verify that your parameters are correct."
+                logger.error(f"Edge TTS synthesis failed: {error_msg}")
+                raise RuntimeError(error_msg)
+            
             logger.info(
                 f"Edge TTS synthesis completed: {len(audio_data)} bytes, "
                 f"voice={request.voice}, {quality_info}"
